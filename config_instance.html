@@ -1,0 +1,85 @@
+<table cellpadding="9" cellspacing="0" align="center">
+<tr valign="top">
+    <td align="right"><?php print_string('configtitle', 'block_tutorias'); ?>:</td>
+    <input type="hidden" name="alowmultipletutorship" value="<?php echo $this->config->alowmultipletutorship; ?>" />
+    <input type="hidden" name="dia_comienzo" value="<?php echo $this->config->dia_comienzo; ?>" />
+    <input type="hidden" name="alowmulsendmail" value="<?php echo $this->config->alowmulsendmail; ?>" />
+    <input type="hidden" name="alowunsubscribesendmail" value="<?php echo $this->config->alowunsubscribesendmail; ?>" />
+    <input type="hidden" name="alowsubscribesendmail" value="<?php echo $this->config->alowsubscribesendmail; ?>" />
+    <input type="hidden" name="alowuremembersendmail" value="<?php echo $this->config->alowuremembersendmail; ?>" />
+    <td><input type="text" name="title" size="30" value="<?php echo $this->config->title; ?>" /></td>
+</tr>
+<?php 
+    if(!isset($CFG->block_tutorias_allow_teachers_config))
+    {$disabled=true;}
+    else
+    {
+        if($CFG->block_tutorias_allow_teachers_config=="1")
+        {
+            $disabled=false;}
+        else
+        { 
+                $disabled=true;}
+    }
+    if($disabled)
+    {
+        print_simple_box(get_string('dont_allow_teacher_edit', 'block_tutorias'), 'center', '', '#eee');
+    }
+ ?>
+<tr valign="top">
+    <td align="right"><?php print_string('configalowmultipletutorship', 'block_tutorias'); ?>:</td>
+    <td><?php choose_from_menu(array(
+                                      '1'=> get_string('conf_yes', 'block_tutorias') ,
+                                      '0'=> get_string('conf_no', 'block_tutorias'))
+                               ,'alowmultipletutorship',$this->config->alowmultipletutorship,'choose','' ,'0' ,false ,$disabled);  ?></td>
+</tr>
+<tr valign="top">
+    <td align="right">
+        <?php print_string('configweek1day', 'block_tutorias'); ?>:
+    </td>
+    <td>
+        <?php choose_from_menu(array(
+                                      '1'=> get_string('conf_lun', 'block_tutorias') ,
+                                      '2'=> get_string('conf_mar', 'block_tutorias') ,
+                                      '3'=> get_string('conf_mier', 'block_tutorias') ,
+                                      '4'=> get_string('conf_jue', 'block_tutorias') ,
+                                      '5'=> get_string('conf_vier', 'block_tutorias') ,
+                                      '6'=> get_string('conf_sab', 'block_tutorias') ,
+                                      '0'=>get_string('conf_dom', 'block_tutorias'))
+                               ,'dia_comienzo',$this->config->dia_comienzo,'choose','' ,'0' ,false ,$disabled);  ?>
+    </td>
+</tr>
+<tr valign="top">
+    <td align="right"><?php print_string('allowsendmail', 'block_tutorias'); ?>:</td>
+    <td><?php choose_from_menu(array(
+                                      '1'=> get_string('conf_yes', 'block_tutorias') ,
+                                      '0'=> get_string('conf_no', 'block_tutorias'))
+                               ,'alowmulsendmail',$this->config->alowmulsendmail,'choose','' ,'0' ,false ,$disabled); ?></td>
+</tr>
+<tr valign="top">
+    <td align="right"><?php print_string('alowsubscribesendmail', 'block_tutorias'); ?>:</td>
+    <td><?php choose_from_menu(array(
+                                      '1'=> get_string('conf_yes', 'block_tutorias') ,
+                                      '0'=> get_string('conf_no', 'block_tutorias'))
+                               ,'alowsubscribesendmail',$this->config->alowsubscribesendmail,'choose','' ,'0' ,false ,$disabled); ?></td>
+</tr>
+<tr valign="top">
+    <td align="right"><?php print_string('alowunsubscribesendmail', 'block_tutorias'); ?>:</td>
+    <td><?php choose_from_menu(array(
+                                      '1'=> get_string('conf_yes', 'block_tutorias') ,
+                                      '0'=> get_string('conf_no', 'block_tutorias'))
+                               ,'alowunsubscribesendmail',$this->config->alowunsubscribesendmail,'choose','' ,'0' ,false ,$disabled); ?></td>
+</tr>
+<tr valign="top">
+    <td align="right"><?php print_string('alowuremembersendmail', 'block_tutorias'); ?>:</td>
+    <td><?php choose_from_menu(array(
+                                      '1'=> get_string('conf_yes', 'block_tutorias') ,
+                                      '0'=> get_string('conf_no', 'block_tutorias'))
+                               ,'alowuremembersendmail',$this->config->alowuremembersendmail,'choose','' ,'0' ,false ,$disabled); ?></td>
+</tr>
+<tr>
+    <td colspan="2" align="center">
+        <input type="submit" value="<?php print_string('savechanges') ?>" />
+    </td>
+</tr>
+</table>

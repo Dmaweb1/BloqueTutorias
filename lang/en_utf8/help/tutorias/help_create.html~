@@ -1,0 +1,7 @@
+        <h3 align="center">Crear Tutoria</h3>
+<p>In this form you must fill the required fields, Tutorship name, Summary, Type, Start date.</p>
+
+<p>Depending on the type of tutorship you can select the duration of the tutorship and the duration per student, this formula is used to calculate the number of students.</p>
+<p><b>Nº Students=Total Time/Time Student</b></p>
+<p>In the form if you press in the interrogation <img src='blocks/tutorias/img/int.png' alt='Interrogacion'>  you obtain the help of the field.</p>
+<img src='blocks/tutorias/img/campos_tut_en.png' alt='Fields'> 

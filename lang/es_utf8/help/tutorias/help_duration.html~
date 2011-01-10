@@ -1,0 +1,5 @@
+<h3 align="center">Minutos por alumno</h3>
+<p>En este campo deberá establecer la duracion total de la tutoria. El numero de estudiantes de la tutoria se calculara apartir de la duracion total y de la duracion por estudiante si la tutoria es individual.</p>
+<p>Este campo no esta disponible si el tipo de tutoria es 'evento'.</p>
+<p>Este campo es obligatorio y podrá ser editado en el futuro si no se han apuntado aun alumnos.</p>
+

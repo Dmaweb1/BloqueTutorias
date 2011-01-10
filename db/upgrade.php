@@ -1,0 +1,27 @@
+<?php
+    function xmldb_block_tutorias_upgrade ($oldversion=0){
+     
+        global $CFG;
+        $result=true;
+
+        if ($oldversion<2010053101)
+        {
+            //we update de global variables
+            if(!isset($CFG->block_tutorias_allow_teachers_config))
+                {set_config('>block_tutorias_allow_teachers_config',"1");}
+            if(!isset($CFG->block_tutorias_default_alowmultipletutorship))
+                {set_config('block_tutorias_default_alowmultipletutorship',"0");}
+            if(!isset($CFG->block_tutorias_default_dia_comienzo))
+                {set_config('block_tutorias_default_dia_comienzo',"1");}
+            if(!isset($CFG->block_tutorias_default_alowmulsendmail))
+                {set_config('block_tutorias_default_alowmulsendmail',"1");}
+            if(!isset($CFG->block_tutorias_default_alowsubscribesendmail))
+                {set_config('block_tutorias_default_alowsubscribesendmail',"1");}
+            if(!isset($CFG->block_tutorias_default_alowunsubscribesendmail))
+                {set_config('block_tutorias_default_alowunsubscribesendmail',"1");}
+            if(!isset($CFG->block_tutorias_default_alowuremembersendmail))
+                {set_config('block_tutorias_default_alowuremembersendmail',"1");}
+        }
+        return $result;
+    }
+?>

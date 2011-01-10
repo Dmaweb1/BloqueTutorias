@@ -1,0 +1,74 @@
+<?php
+global $CFG;
+?>
+
+<div style="text-align: center;">
+<input type="hidden" name="block_tutorias_allow_teachers_config" value="0" />
+<input type="hidden" name="alowmultipletutorship" value="0" />
+<input type="hidden" name="dia_comienzo" value="0" />
+<input type="hidden" name="alowmulsendmail" value="0" />
+<input type="hidden" name="alowunsubscribesendmail" value="0" />
+<input type="hidden" name="alowsubscribesendmail" value="0" />
+<input type="hidden" name="alowuremembersendmail" value="0" />
+<table cellpadding="9" cellspacing="0" align="center">
+<tr valign="top">
+    <td align="right"><?php print_string('configalowmultipletutorship', 'block_tutorias'); ?>:</td>
+    <td><?php choose_from_menu(array(
+                                      '1'=> get_string('conf_yes', 'block_tutorias') ,
+                                      '0'=> get_string('conf_no', 'block_tutorias'))
+                               ,'block_tutorias_default_alowmultipletutorship',$CFG->block_tutorias_default_alowmultipletutorship,'choose','' ,'0' ,false ,false);  ?></td>
+</tr>
+<tr valign="top">
+    <td align="right">
+        <?php print_string('configweek1day', 'block_tutorias'); ?>:
+    </td>
+    <td>
+        <?php choose_from_menu(array(
+                                      '1'=> get_string('conf_lun', 'block_tutorias') ,
+                                      '2'=> get_string('conf_mar', 'block_tutorias') ,
+                                      '3'=> get_string('conf_mier', 'block_tutorias') ,
+                                      '4'=> get_string('conf_jue', 'block_tutorias') ,
+                                      '5'=> get_string('conf_vier', 'block_tutorias') ,
+                                      '6'=> get_string('conf_sab', 'block_tutorias') ,
+                                      '0'=>get_string('conf_dom', 'block_tutorias'))
+                               ,'block_tutorias_default_dia_comienzo',$CFG->block_tutorias_default_dia_comienzo,'choose','' ,'0' ,false ,false);  ?>
+    </td>
+</tr>
+<tr valign="top">
+    <td align="right"><?php print_string('allowsendmail', 'block_tutorias'); ?>:</td>
+    <td><?php choose_from_menu(array(
+                                      '1'=> get_string('conf_yes', 'block_tutorias') ,
+                                      '0'=> get_string('conf_no', 'block_tutorias'))
+                               ,'block_tutorias_default_alowmulsendmail',$CFG->block_tutorias_default_alowmulsendmail,'choose','' ,'0' ,false ,false); ?></td>
+</tr>
+<tr valign="top">
+    <td align="right"><?php print_string('alowsubscribesendmail', 'block_tutorias'); ?>:</td>
+    <td><?php choose_from_menu(array(
+                                      '1'=> get_string('conf_yes', 'block_tutorias') ,
+                                      '0'=> get_string('conf_no', 'block_tutorias'))
+                               ,'block_tutorias_default_alowsubscribesendmail',$CFG->block_tutorias_default_alowsubscribesendmail,'choose','' ,'0' ,false ,false); ?></td>
+</tr>
+<tr valign="top">
+    <td align="right"><?php print_string('alowunsubscribesendmail', 'block_tutorias'); ?>:</td>
+    <td><?php choose_from_menu(array(
+                                      '1'=> get_string('conf_yes', 'block_tutorias') ,
+                                      '0'=> get_string('conf_no', 'block_tutorias'))
+                               ,'block_tutorias_default_alowunsubscribesendmail',$CFG->block_tutorias_default_alowunsubscribesendmail,'choose','' ,'0' ,false ,false); ?></td>
+</tr>
+<tr valign="top">
+    <td align="right"><?php print_string('alowuremembersendmail', 'block_tutorias'); ?>:</td>
+    <td><?php choose_from_menu(array(
+                                      '1'=> get_string('conf_yes', 'block_tutorias') ,
+                                      '0'=> get_string('conf_no', 'block_tutorias'))
+                               ,'block_tutorias_default_alowuremembersendmail',$CFG->block_tutorias_default_alowuremembersendmail,'choose','' ,'0' ,false ,false); ?></td>
+</tr>
+<tr valign="top">
+<td><input type="checkbox" name="block_tutorias_allow_teachers_config" value="1"
+  <?php if(!empty($CFG->block_tutorias_allow_teachers_config)) echo 'checked="checked"'; ?> />
+<?php print_string('allow_teacher_edit', 'block_tutorias'); ?></td>
+</tr>
+<tr>
+<td><p><input type="submit" value="<?php print_string('savechanges'); ?>" /> <?php helpbutton('help_config', get_string('help_config', 'block_tutorias'), 'block_tutorias');?></p></td>
+</tr>
+</table>
+</div>
